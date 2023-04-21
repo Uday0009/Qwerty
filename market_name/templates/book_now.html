@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+Book Now Page
+{% endblock %}
+
+
+{% block content %}
+
+<h1>{{theatre.name }}</h1>
+<h4>Location: {{theatre.location}}</h4>
+<h4>Movie Name: {{show.name}}</h4>
+<h4>Screen no: {{show.srno}}</h4>
+<h4>Price: {{show.price}}</h4>
+<h4>Time: {{show.time}}</h4>
+<h4>Total Number of seats Available: {{show.seatno}}</h4>
+<body >
+    <div class="container">
+        <form method="POST" class="form-register" style="color:white">
+            {{form.hidden_tag()}}
+           
+            <h1 class="h3 mb-3 font-weight-normal">
+               
+            </h1>
+            <br>
+           
+            {{ form.no_of_seats.label() }}
+            {{ form.no_of_seats(class="form-control") }}
+            <br>
+            {{form.date.label(class="form-label")}}
+            {{form.date(class="form-control")}}
+            <br>
+            
+            {{form.time.label(class="form-label")}}
+            <br>
+            {{form.time(class="form-check-label")}}
+            
+            {{ form.submit(class="btn btn-lg btn-block btn-primary") }}
+            <br>
+            
+            
+            
+
+
+        </form>
+    </div>
+</body>
+{% endblock %}

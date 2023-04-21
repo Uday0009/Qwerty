@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}
+Show Page
+{% endblock %}
+
+
+{% block content %}
+
+<br>
+<h1>{{theatre.name }}</h1>
+<br>
+<h4>Location: {{theatre.location}}</h4>
+<br>
+        <table class="one table table-dark">
+            <thead>
+              <tr>
+    
+                <th scope="col"  style="padding-left: 40px;">Movie</th>
+                <th scope="col">Screen Number</th>
+                <th scope="col">Seats Left</th>
+                <th scope="col">Option</th>
+              </tr>
+            </thead>
+            <tbody>
+               
+            {% for s in show %}
+              <tr>
+                
+               
+                <td scope="row" style="padding-left: 40px;">{{ s.name }}</td>
+                <td>{{ s.srno }}</td>
+                <td>{{ s.seatno }}</td>
+                {% if s.seatno >0 %}
+                <td><a href="{{ url_for('book_page',id=s.id) }}" class="btn btn-primary">Book Now</a></td>
+                {%else %}
+                <td>SOLD OUT</td>
+                {%endif%}
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+        
+{% endblock %}

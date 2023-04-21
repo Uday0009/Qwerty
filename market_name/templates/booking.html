@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}
+    My Bookings
+{% endblock title %}
+
+{% block content %}
+
+    <h1 style="margin-top: 20px" >My Bookings:</h1>
+    <br>
+    
+      {% for b in booking %}
+ 
+          <h5 style="padding-bottom: 10px;">Ticket Number - {{ b.id }}</h5>
+          
+          <div class="row">
+                <div class="col">
+                    <h6>Movie Name:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.cname}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Hall Name:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.tname}}</h6>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h6>Location:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.location}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Show Date:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.date}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Show Time:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.time}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Screen Number:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.srno}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>No. of seats:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.no_of_seats}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Booking-Time:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.booking_time}}</h6>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h6>Total Price:</h6>
+                </div>
+                <div class="col">
+                    <h6>{{b.total_price}}</h6>
+                </div>
+            </div>
+            <hr style="border-color: bisque;">
+     <br>
+      {% endfor %}
+{% endblock content %}

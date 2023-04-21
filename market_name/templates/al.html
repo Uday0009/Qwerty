@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+    <div class="container">
+        <form method="POST" class="form-signin" style="color:white">
+            {{ form2.hidden_tag() }}
+            <br><br>
+            <img class="mb-4" src="https://t4.ftcdn.net/jpg/04/75/00/99/360_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.jpg"  width="200px" 
+            height="200px"  alt="">
+            <h1 class="h3 mb-3 font-weight-normal">
+                Admin Login
+            </h1>
+            <br>
+            {{ form2.username2.label() }}
+            {{ form2.username2(class="form-control", placeholder="User Name") }}
+            <br>
+            {{ form2.password2.label() }}
+            {{ form2.password2(class="form-control", placeholder="Password") }}
+
+            <br>
+
+
+           
+
+            {{ form2.submit2(class="btn btn-lg btn-block btn-primary") }}
+            <br>
+            <br>
+
+        </form>
+    </div>
+</body>
+{% endblock %}

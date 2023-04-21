@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+User Login Page
+{% endblock %}
+
+{% block content %}
+<body class="text-center">
+<div class="container">
+<form method="POST" class="form-signin" style="color:white">
+    <br><br>
+{{ form1.hidden_tag() }}
+<img class="mb-4" src="https://www.citypng.com/public/uploads/preview/red-ticket-vector-flat-logo-icon-png-11663776261emdoawyxzn.png"  width="200px" 
+height="200px" alt="">
+<h1 class="h3 mb-3 font-weight-normal">
+User Login
+</h1>
+<br>
+{{ form1.username1.label() }}
+{{ form1.username1(class="form-control", placeholder="User Name") }}
+<br>
+{{ form1.password1.label() }}
+{{ form1.password1(class="form-control", placeholder="Password") }}
+
+<br>
+
+
+<div class="checkbox mb-3">
+<h6>Do not have an account?</h6>
+
+<a class="btn btn-sm btn-secondary" href="{{ url_for('register_page') }}">Register</a>
+</div>
+<br>
+{{ form1.submit1(class="btn btn-lg btn-block btn-primary") }}
+<br><br>
+</form>
+</div>
+</body>
+{% endblock %}

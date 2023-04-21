@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}
+Movie Page
+{% endblock %}
+
+
+{% block content %}
+    <div class="row">
+        {% for t in theatre %}
+            <div class="col-md-4" style='padding-top:30px'>
+                <div class="card" style="background-color: rgba(0, 0, 0, 0.201);">
+                    <div class="card-body" >
+                        <h5 class="card-title">{{t.name}}</h5>
+                        <p class="card-text">{{ t.location }}</p>
+                        <hr>
+                        <a href="{{ url_for('show_page',id=t.id) }}" class="btn btn-primary">View Movies</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
